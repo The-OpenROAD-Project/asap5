@@ -11,7 +11,7 @@
 Calibre Decks are not a part of this repository. They are yet to be
 released. Release will be announced on this page.
 
-[Calibre Usage Instructions](asap5PDK_r0p4/docs/Calibre_Usage_Instructions.txt)
+[Calibre Usage Instructions](asap5PDK_r0p4/docs/Calibre_Usage_Instructions.md)
 
 [PDK Directory Structure](asap5PDK_r0p4/docs/pdk_directory_structure.txt)
 
