@@ -18,7 +18,7 @@ released. Release will be announced on this page.
 **If you use the ASAP5 PDK and/or transistor compact models in any published work, then
 we would appreciate citation for the following articles:**
 
-[V. Vashishtha, L. T. Clark, "ASAP5: A predictive PDK for the 5 nm node," Microelectronics Journal, vol. 126, pp. 105481, Aug. 2022.] (https://doi.org/10.1016/j.mejo.2022.105481)
+[V. Vashishtha, L. T. Clark, "ASAP5: A predictive PDK for the 5 nm node," Microelectronics Journal, vol. 126, pp. 105481, Aug. 2022.](https://doi.org/10.1016/j.mejo.2022.105481)
 
 [V. Vashishtha and L. T. Clark, “Comparing bulk-Si FinFET and gate-all-around FETs for the 5 nm technology node,” Microelectronics J., 2020.](https://doi.org/10.1016/j.mejo.2020.104942)
 
