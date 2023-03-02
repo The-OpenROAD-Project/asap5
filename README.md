@@ -11,9 +11,9 @@
 Calibre Decks are not a part of this repository. They are yet to be
 released. Release will be announced on this page.
 
-[Calibre Usage Instructions](ASAP5PDK_r0p4/docs/Calibre_Usage_Instructions.txt)
+[Calibre Usage Instructions](asap5PDK_r0p4/docs/Calibre_Usage_Instructions.txt)
 
-[PDK Directory Structure](ASAP5PDK_r0p4/docs/pdk_directory_structure.txt)
+[PDK Directory Structure](asap5PDK_r0p4/docs/pdk_directory_structure.txt)
 
 **If you use the ASAP5 PDK and/or transistor compact models in any published work, then
 we would appreciate citation for the following articles:**
