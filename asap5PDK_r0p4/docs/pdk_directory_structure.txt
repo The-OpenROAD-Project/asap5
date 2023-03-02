@@ -69,7 +69,6 @@
     |   |---asap5_TechLib				: Soft-link to the ASAP5 technology library.
     |   |   
     |   |---asap5_TechLib_05				: asap5 technology library.
-    |   |                     				  (created using the technology file 'asap5_TechFile_v04.tf')
     |   |                     				  Any user-created design library must be attached to this technology library for 
     |   |                     				  designing with the asap5 PDK. It also contains asap5 transistors supplied for use
     |   |                     				  during transistor-level design. Both N-type and P-type MOSFETs come in four
