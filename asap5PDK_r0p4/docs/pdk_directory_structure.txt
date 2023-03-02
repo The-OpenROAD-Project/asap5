@@ -1,0 +1,149 @@
+* BSD 3-Clause License
+* 
+* Copyright 2023 Lawrence T. Clark, Vinay Vashishtha, or Arizona State
+* University
+* 
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+* 
+* 1. Redistributions of source code must retain the above copyright notice,
+* this list of conditions and the following disclaimer.
+* 
+* 2. Redistributions in binary form must reproduce the above copyright
+* notice, this list of conditions and the following disclaimer in the
+* documentation and/or other materials provided with the distribution.
+* 
+* 3. Neither the name of the copyright holder nor the names of its
+* contributors may be used to endorse or promote products derived from this
+* software without specific prior written permission.
+* 
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+* AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+* ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+* LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+* CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+* SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+* INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+* CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+* POSSIBILITY OF SUCH DAMAGE.
+
+* PDK Directory Structure
+
+|---asap5PDK_r0p4
+    |   
+    |---asap5ssc6p5t_01
+    |   
+    |---calibre
+    |   |---ruledirs					: Contains Mentor Graphics Calibre SVRF rules used
+    |   |   |         					  for design rule check (DRC), layout-vs-schematic
+    |   |   |         					  (LVS), and parasitic extraction.
+    |   |   |---drc
+    |   |   |   |---drcRules_calibre_asap5.rul 		: File containing the asap5 design rules for use
+    |   |   |    					  with Mentor Graphics Calibre DRC.
+    |   |   |---lvs
+    |   |   |   |---lvsRules_calibre_asap5.rul 		: File containing the asap5 LVS rules for use with
+    |   |   |						  Mentor Graphics Calibre LVS.
+    |   |   |---rcx
+    |   |           
+    |   |---rundirs
+    |       |---drc
+    |       |   |---runset_dir_drc/
+    |       |       |---drcRunset_asap5 		: File created by Calibre Interactive to store the settings
+    |       |       					  specified in the DRC interface. This particular runset
+    |       |       					  points to the supplied DRC rule file.                        
+    |       |---lvs
+    |       |   |---runset_dir_lvs
+    |       |       |---lvsRunset_asap5 		: File created by Calibre Interactive to store the settings
+    |       |       	      				  specified in the LVS interface. This particular runset
+    |       |       	      				  points to the supplied LVS rule file.
+    |       |           
+    |       |---pex
+    |       |   |---runset_dir_pex
+    |       |       |---pexRunset_asap5 		: File created by Calibre Interactive to store the settings
+    |       |       	                                  specified in the PEX interface. This particular runset
+    |       |       	      				  points to the supplied parasitic extraction rule files.
+    |                   
+    |---cdslib
+    |   |---asap5_TechLib				: Soft-link to the ASAP5 technology library.
+    |   |   
+    |   |---asap5_TechLib_05				: asap5 technology library.
+    |   |   |                  				  (created using the technology file 'asap5_TechFile_v04.tf')
+    |   |   |                  				  Any user-created design library must be attached to this technology library for 
+    |   |   |                  				  designing with the asap5 PDK. It also contains asap5 transistors supplied for use
+    |   |   |                  				  during transistor-level design. Both N-type and P-type MOSFETs come in four
+    |   |   |                  				  Vt flavors, viz. regular Vt (RVT), low Vt (LVT), super-low Vt (SLVT), and
+    |   |   |                  				  SRAM Vt. The latter is a special Vt layer provided for use in SRAMs. The
+    |   |   |                  				  view 'symbol' must be used for the purpose of device instantiation. Defined
+    |   |   |                  				  as 'asap5_TechLib' in the cds.lib.
+    |   |   |
+    |   |   |
+    |   |---setup
+    |   |       cds.lib       				: Any libraries defined in this file appear in the Cadence
+    |   |               				 'Library Manager' window. Libraries are defined using the
+    |   |               				 keyword 'DEFINE', the library name, and path to that library. 
+    |   |               				 This particular file is copied to the user's local run
+    |   |               				 directory upon sourcing the setup script. It defines the
+    |   |               				 asap5 technology as well as standard cell library, and a
+    |   |               				 library 'sample'—bundled with the Cadence design
+    |   |               				 suite—containing logic gate symbols. It also includes another
+    |   |               				 cds.lib bundled with Cadence design suite, which defines the
+    |   |               				 following libraries from Cadence: 'cdsDefTechLib',
+    |   |               				 'analogLib', 'functional', 'rfLib', 'rfExamples', 'ahdlLib',
+    |   |               				 'basic', and 'US_8ths'.
+    |	|
+    |   |---cdsenv      				: Cadence environment variable file that allows for the
+    |   |             					  configuring of various Cadence environment related
+    |   |             					  settings. This particular cdsenv file also sets the x and y
+    |   |             					  snap spacing values, that specify the smallest incremental
+    |   |             					  amount by which the cursor moves in Cadence Virtuoso Layout
+    |   |             					  Editor, to 1 nm.
+    |	|
+    |   |---cdsinit					: Cadence initialization file containing SKILL code for
+    |   |              				          additional customization. Among other things, this particular
+    |   |              					  cdsinit file contains SKILL code that adds Calibre Interactive
+    |   |                 				  to the Virtuoso Layout Editor tool menu.
+    |	|
+    |   |---display.drf       				: asap5 PDK display resource file that specifies the manner,
+    |   |                   				  such as color and pattern, in which the PDK layers are
+    |   |                   				  displayed in Virtuoso.
+    |	|
+    |   |---setup_asap5.csh				: C Shell script to copy all the necessary files and
+    |   |                      				  directories, such the Calibre directories and SVRF rule files,
+    |   |                      				  HSpice models, cds.lib, .cdsinit, .cdsenv, and .cshrc file,
+    |   |                      				  required to use the PDK, into the user's local run directory.
+    |	|
+    |   |---set_pdk_path.csh				: C Shell script to specify PDK path and set metal grid offsets
+    |           					  in Calibre.
+    |           
+    |---docs						: Contains documents pertaining to the asap5 PDK.
+    |   |---asap5_pdk_mej_paper.pdf			  ASAP5 PDK publication in Elsevier Microelectronics Journal.
+    |	|
+    |   |---Calibre_Usage_Instructions.txt		: Instructions for using Calibre decks.
+    |	|
+    |   |---README_ASAP5PDK_INSTALL_230226a.txt		: PDK installation instructions.
+    |       
+    |---models						: Contains Compact transistor models that will be
+    |                					  used in asap5 PDK.
+    |       
+        |---hspice
+	    |
+            |   asap5_ff.pm 				: Compact model for the asap5 transistors for simulation at the
+	    |               				  FF corner.
+	    |
+            |   asap5_fs.pm 				: Compact model for the asap5 transistors for simulation at the
+	    |               				  FS corner.
+	    |
+            |   asap5_sf.pm 				: Compact model for the asap5 transistors for simulation at the
+	    |               				  SF corner.
+	    |
+            |   asap5_ss.pm 				: Compact model for the asap5 transistors for simulation at the
+	    |               				  SS corner.
+	    |
+            |   asap5_tt.pm 				: Compact model for the asap5 transistors for simulation at the
+	    |               				  TT corner.
+            |   
+            |---allvt_cgp44_210623a
+                |---nwfet				: Contains individual compact models by transistor Vt and device type
+
