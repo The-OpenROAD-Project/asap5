@@ -69,52 +69,52 @@
     |   |---asap5_TechLib				: Soft-link to the ASAP5 technology library.
     |   |   
     |   |---asap5_TechLib_05				: asap5 technology library.
-    |   |   |                  				  (created using the technology file 'asap5_TechFile_v04.tf')
-    |   |   |                  				  Any user-created design library must be attached to this technology library for 
-    |   |   |                  				  designing with the asap5 PDK. It also contains asap5 transistors supplied for use
-    |   |   |                  				  during transistor-level design. Both N-type and P-type MOSFETs come in four
-    |   |   |                  				  Vt flavors, viz. regular Vt (RVT), low Vt (LVT), super-low Vt (SLVT), and
-    |   |   |                  				  SRAM Vt. The latter is a special Vt layer provided for use in SRAMs. The
-    |   |   |                  				  view 'symbol' must be used for the purpose of device instantiation. Defined
-    |   |   |                  				  as 'asap5_TechLib' in the cds.lib.
-    |   |   |
-    |   |   |
+    |   |                     				  (created using the technology file 'asap5_TechFile_v04.tf')
+    |   |                     				  Any user-created design library must be attached to this technology library for 
+    |   |                     				  designing with the asap5 PDK. It also contains asap5 transistors supplied for use
+    |   |                     				  during transistor-level design. Both N-type and P-type MOSFETs come in four
+    |   |                     				  Vt flavors, viz. regular Vt (RVT), low Vt (LVT), super-low Vt (SLVT), and
+    |   |                     				  SRAM Vt. The latter is a special Vt layer provided for use in SRAMs. The
+    |   |                     				  view 'symbol' must be used for the purpose of device instantiation. Defined
+    |   |                     				  as 'asap5_TechLib' in the cds.lib.
+    |   |   
+    |   |   
     |   |---setup
-    |   |       cds.lib       				: Any libraries defined in this file appear in the Cadence
-    |   |               				 'Library Manager' window. Libraries are defined using the
-    |   |               				 keyword 'DEFINE', the library name, and path to that library. 
-    |   |               				 This particular file is copied to the user's local run
-    |   |               				 directory upon sourcing the setup script. It defines the
-    |   |               				 asap5 technology as well as standard cell library, and a
-    |   |               				 library 'sample'—bundled with the Cadence design
-    |   |               				 suite—containing logic gate symbols. It also includes another
-    |   |               				 cds.lib bundled with Cadence design suite, which defines the
-    |   |               				 following libraries from Cadence: 'cdsDefTechLib',
-    |   |               				 'analogLib', 'functional', 'rfLib', 'rfExamples', 'ahdlLib',
-    |   |               				 'basic', and 'US_8ths'.
-    |	|
-    |   |---cdsenv      				: Cadence environment variable file that allows for the
-    |   |             					  configuring of various Cadence environment related
-    |   |             					  settings. This particular cdsenv file also sets the x and y
-    |   |             					  snap spacing values, that specify the smallest incremental
-    |   |             					  amount by which the cursor moves in Cadence Virtuoso Layout
-    |   |             					  Editor, to 1 nm.
-    |	|
-    |   |---cdsinit					: Cadence initialization file containing SKILL code for
-    |   |              				          additional customization. Among other things, this particular
-    |   |              					  cdsinit file contains SKILL code that adds Calibre Interactive
-    |   |                 				  to the Virtuoso Layout Editor tool menu.
-    |	|
-    |   |---display.drf       				: asap5 PDK display resource file that specifies the manner,
-    |   |                   				  such as color and pattern, in which the PDK layers are
-    |   |                   				  displayed in Virtuoso.
-    |	|
-    |   |---setup_asap5.csh				: C Shell script to copy all the necessary files and
-    |   |                      				  directories, such the Calibre directories and SVRF rule files,
-    |   |                      				  HSpice models, cds.lib, .cdsinit, .cdsenv, and .cshrc file,
-    |   |                      				  required to use the PDK, into the user's local run directory.
-    |	|
-    |   |---set_pdk_path.csh				: C Shell script to specify PDK path and set metal grid offsets
+    |   |   |---cds.lib       				: Any libraries defined in this file appear in the Cadence
+    |   |   |           				 'Library Manager' window. Libraries are defined using the
+    |   |   |           				 keyword 'DEFINE', the library name, and path to that library. 
+    |   |   |           				 This particular file is copied to the user's local run
+    |   |   |           				 directory upon sourcing the setup script. It defines the
+    |   |   |           				 asap5 technology as well as standard cell library, and a
+    |   |   |           				 library 'sample'—bundled with the Cadence design
+    |   |   |           				 suite—containing logic gate symbols. It also includes another
+    |   |   |           				 cds.lib bundled with Cadence design suite, which defines the
+    |   |   |           				 following libraries from Cadence: 'cdsDefTechLib',
+    |   |   |            				 'analogLib', 'functional', 'rfLib', 'rfExamples', 'ahdlLib',
+    |   |   |            				 'basic', and 'US_8ths'.
+    |	|   |
+    |   |   |---cdsenv      				: Cadence environment variable file that allows for the
+    |   |   |          					  configuring of various Cadence environment related
+    |   |   |          					  settings. This particular cdsenv file also sets the x and y
+    |   |   |          					  snap spacing values, that specify the smallest incremental
+    |   |   |          					  amount by which the cursor moves in Cadence Virtuoso Layout
+    |   |   |          					  Editor, to 1 nm.
+    |	|   |
+    |   |   |---cdsinit					: Cadence initialization file containing SKILL code for
+    |   |   |           				  additional customization. Among other things, this particular
+    |   |   |           				  cdsinit file contains SKILL code that adds Calibre Interactive
+    |   |   |              				  to the Virtuoso Layout Editor tool menu.
+    |	|   |
+    |   |   |---display.drf       			: asap5 PDK display resource file that specifies the manner,
+    |   |   |                   			  such as color and pattern, in which the PDK layers are
+    |   |   |                   			  displayed in Virtuoso.
+    |	|   |
+    |   |   |---setup_asap5.csh				: C Shell script to copy all the necessary files and
+    |   |   |                      			  directories, such the Calibre directories and SVRF rule files,
+    |   |   |                      			  HSpice models, cds.lib, .cdsinit, .cdsenv, and .cshrc file,
+    |   |   |                      			  required to use the PDK, into the user's local run directory.
+    |	|   |
+    |   |   |---set_pdk_path.csh			: C Shell script to specify PDK path and set metal grid offsets
     |           					  in Calibre.
     |           
     |---docs						: Contains documents pertaining to the asap5 PDK.
@@ -125,8 +125,8 @@
     |   |---README_ASAP5PDK_INSTALL_230226a.txt		: PDK installation instructions.
     |       
     |---models						: Contains Compact transistor models that will be
-    |                					  used in asap5 PDK.
-    |       
+    |   |             					  used in asap5 PDK.
+    |   |    
         |---hspice
 	    |
             |   asap5_ff.pm 				: Compact model for the asap5 transistors for simulation at the
