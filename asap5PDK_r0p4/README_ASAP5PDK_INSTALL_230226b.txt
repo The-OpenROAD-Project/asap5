@@ -47,14 +47,9 @@
 * PDK 
 *--------------------------------------------------------------------------
 
-1. Untar the PDK archive 'asap5PDK_r0p4.tar.bz2' (where 0p1 is the PDK
-   version number) by using the following command:
+1. Copy the untarred PDK 'asap5PDK_r0p4' to an install area.
 
-   tar -xvjf asap5PDK_r0p4.tar.bz2 
-
-2. Copy the untarred PDK 'asap5PDK_r0p4' to an install area.
-
-3. Change the environment variable value $PDK_DIR in the following files by
+2. Change the environment variable value $PDK_DIR in the following files by
    replacing the string 'PDKDirectory' with the absolute path to the PDK
    directory (including the PDK directory name):
 
